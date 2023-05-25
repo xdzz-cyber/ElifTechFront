@@ -1,2 +1,2 @@
-export const SHOPS_BASE_URL = 'http://localhost:3000/shops';
-export const CARTS_BASE_URL = 'http://localhost:3000/carts';
+export const SHOPS_BASE_URL = 'https://afternoon-springs-35631.herokuapp.com/shops';
+export const CARTS_BASE_URL = 'https://afternoon-springs-35631.herokuapp.com/carts';
