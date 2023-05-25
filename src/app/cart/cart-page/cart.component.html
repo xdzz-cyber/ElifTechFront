@@ -1,0 +1,69 @@
+<div class="cart-main">
+  <div class="cart-main-child">
+    <form [formGroup]="myForm" (ngSubmit)="submitForm()">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input placeholder="input" type="text" class="form-control" id="name" formControlName="name">
+        <div *ngIf="formControls['name']?.invalid && (formControls['name']?.dirty || formControls['name']?.touched)">
+          <div *ngIf="formControls['name']?.hasError('required')">
+            Name is required.
+          </div>
+          <div *ngIf="formControls['name']?.hasError('minlength')">
+            Name must be at least 3 characters long.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input placeholder="input" type="email" class="form-control" id="email" formControlName="email">
+        <div *ngIf="formControls['email']?.invalid && (formControls['email']?.dirty || formControls['email']?.touched)">
+          <div *ngIf="formControls['email']?.hasError('required')">
+            Email is required.
+          </div>
+          <div *ngIf="formControls['email']?.hasError('email')">
+            Invalid email format.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="tel" class="form-control" id="phone" formControlName="phone">
+        <div *ngIf="formControls['phone']?.invalid && (formControls['phone']?.dirty || formControls['phone']?.touched)">
+          <div *ngIf="formControls['phone'].hasError('required')">
+            Phone is required.
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="address" class="form-label">Address</label>
+        <input type="text" class="form-control" id="address" formControlName="address">
+        <div *ngIf="formControls['address']?.invalid && (formControls['address']?.dirty || formControls['address']?.touched)">
+          <div *ngIf="formControls['address']?.hasError('required')">
+            Address is required.
+          </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Submit</button>
+    </form>
+
+  </div>
+
+  <div class="cart-main-child">
+    <div *ngIf="goods.length === 0">
+      <p>Your cart is empty.</p>
+    </div>
+    <div *ngIf="goods.length > 0">
+      <div *ngFor="let cartItem of goods">
+        <img width="100" height="100" src="{{cartItem.imageUrl}}" alt="no cart image"/>
+        <p>{{cartItem.name}}</p>
+        <p>Price: {{cartItem.price}}</p>
+        <input [(ngModel)]="cartItem.selectedCount" min="1" type="number" placeholder="count"
+               [max]="cartItem.quantity">
+        <button (click)="removeFromCart(cartItem)">Remove</button>
+      </div>
+    </div>
+  </div>
+  <div class="summary">
+    <p>Total price: {{calculateTotal()}}</p>
+  </div>
+</div>

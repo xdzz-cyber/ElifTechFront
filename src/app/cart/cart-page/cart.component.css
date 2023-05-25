@@ -1,0 +1,9 @@
+.cart-main{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+}
+
+.cart-main-child{
+  border: 1px solid black;
+}
