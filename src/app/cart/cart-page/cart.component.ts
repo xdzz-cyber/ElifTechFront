@@ -14,6 +14,7 @@ export class CartComponent implements OnInit, OnDestroy{
   goods: Goods[] = [];
   myForm: FormGroup;
   private subscription!: Subscription;
+  responseFromServer: string = '';
 
   constructor(private cartSharedService: CartSharedService, private formBuilder: FormBuilder,
               private cartService: CartService) {
@@ -47,15 +48,20 @@ export class CartComponent implements OnInit, OnDestroy{
         totalPrice: this.calculateTotal(),
         goods: this.goods
       };
-      this.subscription = this.cartService.placeOrder(formData).subscribe(() => {
+      this.subscription = this.cartService.placeOrder(formData).subscribe((data) => {
         this.cartSharedService.clearCart();
         this.myForm.reset();
         this.getCartItems();
+        this.setResponseFromServer(JSON.stringify(data))
       });
       console.log('Form submitted successfully');
     } else {
       console.log('Form validation errors');
     }
+  }
+
+  setResponseFromServer(response: string) {
+    this.responseFromServer = response;
   }
 
   setDefaultSelectedCount() {
