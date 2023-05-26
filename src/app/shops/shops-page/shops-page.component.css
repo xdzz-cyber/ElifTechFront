@@ -1,0 +1,79 @@
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 0;
+}
+
+div {
+  margin: 0 10px;
+}
+
+h2 {
+  cursor: pointer;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+h2.selected {
+  background-color: lightgray;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  border: 1px solid gray;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100px;
+}
+
+.shops {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.shop {
+  width: 25%;
+  padding: 10px;
+  border: 1px solid gray;
+}
+
+.shop h2 {
+  margin-bottom: 0;
+}
+
+.shop img {
+  width: 100%;
+}
+
+.shop ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.shop li {
+  margin-bottom: 5px;
+}
+
+.shop .button {
+  margin-top: 10px;
+}

@@ -1,12 +1,12 @@
 <h1>Shops</h1>
 
-<div *ngFor="let shop of shops">
+<div *ngFor="let shop of shops" class="shops">
   <h2 (click)="toggleGoods(shop)" [ngClass]="{ 'selected': isShopSelected(shop) }">{{ shop.name }}</h2>
-  <ul *ngIf="isShopSelected(shop) && !shop.isDisabled">
+  <ul *ngIf="isShopSelected(shop) && !shop.isDisabled" class="shop">
     <li *ngFor="let goods of shop.goods">
       <img width="100" height="100" [src]="goods.imageUrl" alt="no image">
       {{ goods.name }}
-      <button (click)="addToCart(goods)">Add to cart</button>
+      <button (click)="addToCart(goods)" class="button">Add to cart</button>
     </li>
   </ul>
 </div>
