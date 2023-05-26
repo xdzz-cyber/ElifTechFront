@@ -1,27 +1,12 @@
-# Ui
+# ElifTechFront (middle level of task)
+To run app locally do the following:
+1) Git clone repo
+2) Launch the app by switch to ui folder and running "ng serve" from command line
+3) Open the app on the specified ports (may be different to mine, so check the output from app)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.6.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+To run the deployed version do the following:
+1) Open the project via link: https://eliftechfront.herokuapp.com/shops
+2) Now you're watching at main page which is Shops. Here you can select only one shop to order goods
+3) Once you've added goods, go to Cart page via link in header
+4) Fill in the form with appropriate data, change count of items or delete them if needed
+5) Submit form and get your response
